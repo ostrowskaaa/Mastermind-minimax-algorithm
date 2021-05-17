@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, choices
 from itertools import product, permutations
 from collections import Counter
 
@@ -81,7 +81,7 @@ class MastermindAlgorithm():
     def make_move(self):
         # first move
         if len(self.player_guesses) == 0:
-            color1, color2 = choice(COLORS), choice(COLORS)
+            color1, color2 = choices(COLORS, k=2)
             guess = [color1, color1, color2, color2]
 
         # any other move
